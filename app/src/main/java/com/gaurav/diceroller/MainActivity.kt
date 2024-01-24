@@ -33,6 +33,8 @@ class MainActivity : AppCompatActivity() {
             DiceImage.setImageResource(drawable)
         }
 
+        // This resets the diceroller
+
         SettoButton.setOnClickListener {
             DiceImage.setImageResource(R.drawable.dice_random)
         }
