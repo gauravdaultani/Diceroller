@@ -1,6 +1,7 @@
 package com.gaurav.diceroller
 
 import android.annotation.SuppressLint
+import android.media.MediaPlayer
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -18,6 +19,9 @@ class MainActivity : AppCompatActivity() {
         RandomButton = findViewById(R.id.button3)
         SettoButton=findViewById(R.id.button2)
         DiceImage=findViewById((R.id.imageView))
+
+        val dice_sound: MediaPlayer = MediaPlayer.create(this, R.raw.dice_sound)
+
         RandomButton.setOnClickListener{
             val random=(1..6).random()
             val drawable=when(random){
@@ -30,6 +34,7 @@ class MainActivity : AppCompatActivity() {
                 else->
                 {R.drawable.dice_random}
             }
+            dice_sound.start()
             DiceImage.setImageResource(drawable)
         }
 
